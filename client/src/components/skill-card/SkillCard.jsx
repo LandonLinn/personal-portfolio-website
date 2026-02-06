@@ -1,41 +1,50 @@
-const year = new Date().getFullYear();
+import { getYear } from "../../utils/date";
+const year = getYear();
 
 export const skills = [{
+    id: 0,
     name: "HTML",
     icon: "/skill-icons/HTML.png",
     yearsOfExperience: year - 2024,
 },
 {
+    id: 1,
     name: "CSS",
     icon: "/skill-icons/css.png",
     yearsOfExperience: year - 2024,
 },
 {
+    id: 2,
     name: "JavaScript",
     icon: "/skill-icons/JavaScript.png",
     yearsOfExperience: year - 2024,
 },
 {
+    id: 3,
     name: "Node.js",
     icon: "/skill-icons/node.png",
     yearsOfExperience: year - 2024,
 },
 {
+    id: 4,
     name: "Express",
     icon: "/skill-icons/express.png",
     yearsOfExperience: year - 2024,
 },
 {
+    id: 5,
     name: "MongoDB",
     icon: "/skill-icons/mongo.png",
     yearsOfExperience: year - 2024,
 },
 {
+    id: 6,
     name: "Figma",
     icon: "/skill-icons/figma.png",
     yearsOfExperience: year - 2024,
 },
 {
+    id: 7,
     name: "Adobe Creative Cloud",
     icon: "/skill-icons/adobe.png",
     yearsOfExperience: year - 2024,

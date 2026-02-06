@@ -1,64 +1,43 @@
+import IconLink from "../icon-link/IconLink";
+
 
 const SocialLinks = ({ linkClass, svgClass }) => {
     return(
-        <div className="w-fit flex content-center gap-4 mx-auto my-5 ">
-            {/* Linkedin */}
-            <a href="https://www.linkedin.com/in/landon-linn/" target="" rel="noopener noreferrer" className={`${linkClass}`}>
-                <svg className={`${svgClass}`} id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" preserveAspectRatio="xMidYMid meet">
-                    <defs>
-                        
-                    </defs>
-                    <g id="Page-1">
-                        <g id="Dribbble-Light-Preview">
-                        <g id="icons">
-                            <path id="linkedin-_x5B__x23_161_x5D_" class="cls-1" d="M800,800h-160v-279.96c0-76.8-33.88-119.65-94.64-119.65-66.12,0-105.36,44.65-105.36,119.65v279.96h-160V280h160v58.48s50.2-88.09,163.32-88.09,196.68,69.04,196.68,211.93v337.68h0ZM97.68,196.84C43.72,196.84,0,152.75,0,98.4S43.72,0,97.68,0s97.64,44.08,97.64,98.4c.04,54.36-43.72,98.44-97.64,98.44h0ZM0,800h200V280H0v520Z"/>
-                        </g>
-                        </g>
-                    </g>
-                </svg>
-            </a>
+        <div className="flex gap-2">
+            {/* LinkedIn */}
+            <IconLink 
+                iconName=""
+                img=""
+                link="https://www.linkedin.com/in/landon-linn/"
+            />
 
-            {/* Github */}
-            <a href="https://github.com/LandonLinn" target="" rel="noopener noreferrer" className={`${linkClass}`}>
-                <svg className={`${svgClass}`} id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
-                <g id="Page-1">
-                    <g id="Dribbble-Light-Preview">
-                    <g id="icons">
-                        <path id="github-_x5B__x23_142_x5D_" class="cls-1" d="M400,0c220.92,0,400,183.59,400,410.12,0,181.17-114.48,334.84-273.32,389.12-20.28,4.04-27.48-8.75-27.48-19.69,0-13.52.48-57.68.48-112.56,0-38.22-12.8-63.18-27.16-75.92,89.08-10.16,182.68-44.84,182.68-202.36,0-44.79-15.52-81.35-41.2-110.08,4.16-10.35,17.88-52.07-3.92-108.55,0,0-33.52-11-109.88,42.05-31.96-9.08-66.2-13.65-100.2-13.81-34,.16-68.2,4.73-100.12,13.81-76.44-53.05-110.04-42.05-110.04-42.05-21.72,56.48-8,98.2-3.88,108.55-25.56,28.73-41.2,65.29-41.2,110.08,0,157.13,93.4,192.32,182.24,202.7-11.44,10.23-21.8,28.32-25.4,54.82-22.8,10.49-80.72,28.61-116.4-34.06,0,0-21.16-39.41-61.32-42.29,0,0-39-.53-2.72,24.92,0,0,26.2,12.6,44.4,60,0,0,23.48,73.2,134.76,48.4.2,34.28.56,66.6.56,76.35,0,10.84-7.36,23.54-27.32,19.73C114.6,745.08,0,591.33,0,410.12,0,183.59,179.12,0,400,0"/>
-                    </g>
-                    </g>
-                </g>
-                </svg>
-            </a>
+            {/* GitHub */}
+            <IconLink 
+                iconName=""
+                img=""
+                link="https://github.com/LandonLinn"
+            />
 
             {/* Behance */}
-            <a href="https://www.behance.net/landonlinn1" target="" rel="noopener noreferrer" className={`${linkClass}`}>
-                <svg className={`${svgClass}`} id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" preserveAspectRatio="xMidYMid meet">
-                    <g id="Page-1">
-                        <g id="Dribbble-Light-Preview">
-                        <g id="icons">
-                            <path id="behance-_x5B__x23_163_x5D_" class="cls-1" d="M798.83,130.29h313.11V40.62h-313.11v89.66ZM953.17,310.37c-69.85,0-122.89,43.27-128,123.23h250.58c-16.98-94.89-59.14-123.23-122.58-123.23h0ZM962.95,681.22c64.49,0,111.82-40.75,121.48-75.06h135.63c-38.77,124.13-118.83,193.84-262.58,193.84-183.45,0-286.4-130.47-286.4-303.61,0-407.72,588.31-422.36,558.77,38.07h-404.68c3.94,93.48,42.52,146.75,137.78,146.75h0ZM352.62,663.28c74.03,0,125.85-28.46,125.85-105.32s-45.78-114.27-122.65-114.27h-185.48v219.59h182.28ZM342.83,323.83c61.6,0,104.12-28.67,104.12-95.28,0-70.16-49.48-91.83-117.11-91.83h-159.51v187.11h172.49ZM364.55,0c145.91,0,247.32,48.23,247.32,198.29,0,74.31-29.85,129.66-105.23,166.98,96.49,28.67,142.15,103.91,142.15,202.82,0,156.97-124.49,231.91-273.42,231.91H0V0h364.55Z"/>
-                        </g>
-                        </g>
-                    </g>
-                </svg>
-            </a>
+            <IconLink 
+                iconName=""
+                img=""
+                link="https://www.behance.net/landonlinn1"
+            />
 
             {/* Upwork */}
-            <a href="https://www.upwork.com/freelancers/~013fc1527a77ae991e" target="" rel="noopener noreferrer" className={`${linkClass}`}>
-                <svg className={`${svgClass}`} id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" preserveAspectRatio="xMidYMid meet">
-                    <path d="M872.75,454.36c-51.8,0-100.46-21.86-144.54-57.65l10.65-50.5.35-2.01c9.73-53.63,39.85-143.8,133.5-143.8,70.17,0,127.09,56.95,127.09,127.09s-56.95,126.91-127.09,126.91l.04-.04ZM872.75,71.79c-119.36,0-212.14,77.51-249.76,205.16C565.68,190.81,521.96,87.24,496.64,0h-128.57v334.43c-.18,66.12-53.63,119.58-119.75,119.75-66.12-.18-119.58-53.81-119.75-119.75V0H0v334.43c0,136.99,111.46,249.24,248.32,249.24s248.32-112.21,248.32-249.24v-56.03c24.97,51.98,55.64,104.87,92.92,151.52l-78.78,370.08h131.49l57.13-268.52c49.97,31.95,107.44,52.15,173.39,52.15,141.05,0,255.65-115.34,255.65-256.22s-114.6-255.65-255.65-255.65l-.04.04Z"/>
-                </svg>
-            </a>
+            <IconLink 
+                iconName=""
+                img=""
+                link="https://upwork.com/freelancers/~013fc1527a77ae991e"
+            />
 
             {/* Fiverr */}
-            <a href="https://www.fiverr.com/linnium" target="" rel="noopener noreferrer" className={`${linkClass}`}>
-                <svg className={`${svgClass}`}  id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 625 666.67" preserveAspectRatio="xMidYMid meet">
-                    <path d="M541.67,541.67V208.33H208.33v-20.83c0-34.47,28.03-62.5,62.5-62.5h62.5V0h-62.5C167.33.13,83.46,84,83.33,187.5v20.83H0v125h83.33v208.33H0v125h291.67v-125h-83.33v-208.33h209.5v208.33h-84.5v125h291.67v-125h-83.33Z"/>
-                    <circle cx="479.17" cy="62.5" r="62.5"/>
-                </svg>
-            </a>
-            
+            <IconLink 
+                iconName=""
+                img=""
+                link="https://www.fiverr.com/sellers/linnium"
+            />
 
         </div>
         

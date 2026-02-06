@@ -13,7 +13,7 @@ import CertificationCard from "../../components/certification-card/Certification
 
 const Skills = () => {
     return(
-        <Section sectionClass="w-screen col-span-full text-center flex align-center">
+        <Section sectionId='skills' sectionClass="w-screen col-span-full text-center flex align-center">
             <div className="text-center col-span-full flex flex-col">
                 <h2><span className="html-tag left-tag">&lt;h2&gt;</span>My Skills<span className="html-tag right-tag">&lt;/h2&gt;</span></h2>
                 {/* Expertise & Skill Cards */}
@@ -27,12 +27,12 @@ const Skills = () => {
                                             viewBox="0 0 512 512"  xml:space="preserve">
                                         <style type="text/css"></style>
                                         <g>
-                                            <path class="st0" d="M0,0.002v511.996h512v-18.071V0.002H0z M475.859,475.856H36.141v-364.43h439.718V475.856z"/>
-                                            <rect x="78.305" y="167.994" class="st0" width="355.386" height="96.723"/>
-                                            <rect x="295.152" y="309.894" class="st0" width="138.538" height="118.968"/>
-                                            <rect x="78.305" y="311.694" class="st0" width="162.631" height="18.07"/>
-                                            <rect x="78.305" y="408.991" class="st0" width="162.631" height="18.071"/>
-                                            <rect x="78.305" y="360.347" class="st0" width="162.631" height="18.071"/>
+                                            <path className="st0" d="M0,0.002v511.996h512v-18.071V0.002H0z M475.859,475.856H36.141v-364.43h439.718V475.856z"/>
+                                            <rect x="78.305" y="167.994" className="st0" width="355.386" height="96.723"/>
+                                            <rect x="295.152" y="309.894" className="st0" width="138.538" height="118.968"/>
+                                            <rect x="78.305" y="311.694" className="st0" width="162.631" height="18.07"/>
+                                            <rect x="78.305" y="408.991" className="st0" width="162.631" height="18.071"/>
+                                            <rect x="78.305" y="360.347" className="st0" width="162.631" height="18.071"/>
                                         </g>
                                         </svg>}
                             expertiseName="Front-End Development"
@@ -77,7 +77,7 @@ const Skills = () => {
                     <div className="grid grid-cols-2 grid-rows-[120px_120px_120px_120px] gap-2 w-screen">
                         {skills.map((skill) =>(
                             <SkillCard 
-                                key="skill"
+                                key={skill.id}
                                 skillIcon={skill.icon}
                                 skillName={skill.name}
                                 skillYear={skill.yearsOfExperience}

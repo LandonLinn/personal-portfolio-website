@@ -1,28 +1,32 @@
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
 
 // Components
 import Header from './components/header/Header';
-import Hero from './sections/hero/Hero';
-import About from './sections/about/About';
-import Skills from './sections/skills/Skills';
-import Projects from './sections/projects/Projects';
-import Contact from './sections/contact/Contact';
-import LatestBlogs from './sections/latest-blogs/LatestBlogs';
 import Footer from './components/footer/Footer';
 
-function App() {
+// Pages
+import ProjectPage from './pages/project-page/ProjectPage';
+import ArticlePage from './pages/article-page/ArticlePage';
+import Homepage from './pages/homepage/Homepage';
 
-
+const App = () => {
   return (
     <>
-      {/* <Header/> */}
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
-      <LatestBlogs />
-      <Footer />
+        {/* Header */}
+        <Header/>       
+
+        {/* Page Routes */}
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/projects" element={<ProjectPage />} />
+          <Route path="/articles" element={<ArticlePage />} />
+          {/* 404 */}
+          <Route path='*' element={null}/>
+        </Routes>
+
+        {/* Footer */}
+        {/* <Footer /> */}
     </>
   )
 }

@@ -1,3 +1,5 @@
+import { getYear } from "../../utils/date";
+
 const Footer = () => {
     return(
         <footer className="">
@@ -11,7 +13,7 @@ const Footer = () => {
 
             {/* Copyright & Socials */}
             <div className="h-20 px-20 border-t border-neutral-gray flex content-center justify-between items-center">
-                <p>&copy; 2026 Landon Linn</p>
+                <p>&copy; {getYear()} Landon Linn</p>
                 {/* Social Links */}
                 
             </div>

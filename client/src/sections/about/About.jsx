@@ -2,7 +2,7 @@ import Section from "../Section";
 
 const About = () => {
     return(
-        <Section sectionClass="h-auto grid-rows-[auto_auto_auto_auto] lg:grid-rows-[auto_150px_auto_auto] xl:grid-rows-[auto_100px_100px_100px_auto_200px]">
+        <Section sectionId='about' sectionClass="h-auto grid-rows-[auto_auto_auto_auto] lg:grid-rows-[auto_150px_auto_auto] xl:grid-rows-[auto_100px_100px_100px_auto_200px]">
             <div className="text-center col-span-full flex flex-col">
                 <h2><span className="html-tag left-tag ">&lt;h2&gt;</span>About Me<span className="html-tag right-tag">&lt;/h2&gt;</span></h2>
             </div>

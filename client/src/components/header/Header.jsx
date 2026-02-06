@@ -1,9 +1,8 @@
 import Primary_btn from "../primary_button/Primary_btn";
-import { useState } from "react";
+import LogoOccupation from "../logo-occupation/LogoOccupation";
+import NavLinks from "../nav-links/NavLinks";
 
 const Header = () => {
-
-    const [linkActive, setLinkActive] = useState("");
 
     return(
         <header className="h-auto py-5 w-full border-b border-neutral-gray bg-neutral-black flex fixed z-100">
@@ -15,27 +14,17 @@ const Header = () => {
                         <div className="h-1 bg-white rounded-4xl mb-1.5"></div>
                         <div className="h-1 bg-white rounded-4xl"></div>
                     </div>
-                    <a href="/" className="mt-auto mb-auto text-nowrap">
-                        <h4 className="logo">Landon Linn</h4>
-                        <p>Software Developer</p>
-                    </a>
+                    <LogoOccupation />
                 </div>
                 
                 {/* Nav Items */}
-                <nav className="max-md:row-start-2 max-md:col-span-2 max-sm:hidden justify-self-center content-center">
-                    <ul className="flex gap-8">
-                        <li><a href="/" className="active">Home</a></li>
-                        <li><a href="/about">About</a> </li>
-                        <li><a href="/skills">Skills</a></li>
-                        <li><a href="/projects">Projects</a></li>
-                        <li><a href="/articles">Articles</a></li>
-                    </ul>
-                </nav>
+                <NavLinks />
 
                 {/* Contact Button - Primary */}
                 <Primary_btn 
                     btn_text="Contact"
                     link_styles="my-auto ml-auto"
+                    link="/#contact"
                 />
             </div>
         </header>
