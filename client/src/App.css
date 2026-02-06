@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@theme{
+  /* Fonts */
+  --primary-font: "Bree Serif", serif;
+  --secondary-font: "Inter", sans-serif;
+
+  /* Primary */
+  --color-primary-blue: #147df5;
+
+  /* Accent */
+  --color-accent-blue: #0aefff;
+
+  /* Neutral */
+  --color-neutral-white: #f8f9fa;
+  --color-neutral-black:  #212529;
+  --color-neutral-gray: #495057;  /* lines */
+  --color-dark-gray: #343a40; /* tags */
+
+  /* Gradient */
+  --primary-gradient: linear-gradient(to top right, var(--color-primary-blue), var(--color-accent-blue));
+
+  /* Borders */
+  --app-border: 1px solid var(--neutral-gray); 
+
+  /* Button */
+  
+}
+
+body{
+  background-color: var(--color-neutral-black);
+  color: white;
+  box-sizing: border-box;
+}
+
+h1, h2, .logo{
+  font-family: var(--primary-font);
+}
+
+h3, h4, li, ul, a, textarea, input, button{
+  font-family: var(--secondary-font);
+}
+
+h3{
+  background: var(--primary-gradient);
+  color: transparent;
+  background-clip: text;
+}
+
+header li{
+  color: var(--color-neutral-gray)
+}
+
+header li:hover{
+  color: var(--color-dark-gray)
+}
+
+.active {
+  background: var(--primary-gradient);
+  color: transparent;
+  background-clip: text;
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Font Sizing */
+h1{font-size: clamp(2.25rem, 4vw, 5.25rem);}
+h2{font-size: clamp(2rem, 3vw, 4rem);  margin-bottom: 20px;}
+h3{font-size: clamp(1.25rem, 1.9vw, 2.25rem);}
+h4{font-size: clamp(1.05rem, 1.3vw, 1.5rem);}
+h1,h2,h3,h4{font-weight: 700;}
+p{font-size: clamp(1rem, 1.1vw, 1.25rem); line-height:1.6;}
+
+/* HTML Tags */
+.html-tag{
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: var(--color-dark-gray);
+  margin: 0px 20px 0px 20px;
+}
+/* 
+.left-tag{
+  margin-right: 20px;
+}
+
+.right-tag{
+  margin-left: 20px
+} */
