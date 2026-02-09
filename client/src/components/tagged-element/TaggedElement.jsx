@@ -1,8 +1,9 @@
 import Tag from "../tag/Tag";
 
-import Primary_btn from "../primary_button/Primary_btn";
+import PrimaryBtn from "../buttons/primary_button/PrimaryBtn";
+import SecondaryBtn from "../buttons/secondary-button/SecondaryBtn";
 
-const TaggedElement = ({ elementContent, elementTag, elementClass }) => {
+const TaggedElement = ({ elementContent, elementTag, elementClass, elementContainerClass, elementHidden }) => {
     let text;
 
     if(elementTag === "h1"){
@@ -19,15 +20,19 @@ const TaggedElement = ({ elementContent, elementTag, elementClass }) => {
     }
     else if(elementTag === "p"){
         text = <p className={elementClass}>{elementContent}</p>;
-    } else {
-        text = <Primary_btn btn_text="Download Resume" primary_btn_classes="mt-5"/>;
+    } 
+    else{
+        text = <div className="flex gap-2 ">
+            <PrimaryBtn btn_text="Download Resume" primary_btn_classes="my-2"/>
+            <SecondaryBtn btn_text="View Projects" secondary_btn_classes="my-2"/>
+        </div>
     }
 
     return(
-        <div className="flex gap-4 md:8">
+        <div className={`${elementContainerClass} flex gap-4`}>
             <Tag tagType="open" tagName={elementTag} />
                 {text}
-            <Tag tagType="close" tagName={elementTag} />
+            <Tag tagType="close" tagName={elementTag} tagHidden={elementHidden} />
         </div>
     )
 }

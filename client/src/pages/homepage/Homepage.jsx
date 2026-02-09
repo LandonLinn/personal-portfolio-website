@@ -8,7 +8,7 @@ const Homepage = () => {
     return(
         <>
             <Hero />
-            {/* <About /> */}
+            <About />
             {/* <Skills /> */}
             {/* <Contact /> */}
             {/* <LatestBlogs /> */}

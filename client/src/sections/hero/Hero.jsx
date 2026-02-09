@@ -1,16 +1,16 @@
 import Section from "../Section";
-import Primary_btn from "../../components/primary_button/Primary_btn";
 import SocialLinks from "../../components/social-links/SocialLinks";
 import TaggedElement from "../../components/tagged-element/TaggedElement";
+import PrimaryBtn from "../../components/buttons/primary_button/PrimaryBtn";
 
 // Functions
 import { getHours } from "../../utils/date";
-import Tag from "../../components/tag/Tag";
+import StackIconElem from "../../components/stack-icons/stack-icon-element/StackIconElem";
 
 const Hero = () => {
     return(
-        <Section sectionClass="h-screen pt-40">
-          <div className="text-center col-start-1 col-span-2 flex flex-col gap-2 max-w-250 justify-center items-center content-center z-2">
+        <Section sectionClass="h-screen ">
+          <div className="text-center col-start-1 col-span-full flex flex-col gap-2 justify-center items-center content-center z-2">
             {/* Greeting */}
             <TaggedElement elementTag="p" elementContent={getHours()} elementClass="text-neutral-gray"/>
 
@@ -21,9 +21,9 @@ const Hero = () => {
             <TaggedElement elementTag="h3" elementContent="Software Developer"/>
 
             {/* Description */}
-            <TaggedElement elementTag="p" elementContent="Crafting clean interfaces and scalable web experiences with a strong focus on usability and performances."/>
+            <TaggedElement elementTag="p" elementContent="Crafting clean interfaces and scalable web experiences with a strong focus on usability and performances." elementClass={" max-w-125"}/>
             
-            {/* Resume Download */}
+            {/* Resume Download & Porfolio Buttons */}
             <TaggedElement elementTag="button" elementContent="Download Resume" />
 
             <SocialLinks 
@@ -33,16 +33,38 @@ const Hero = () => {
 
             {/* Site Built With */}
             <TaggedElement elementTag="p" elementContent="Site built with" elementClass="text-neutral-gray" />
+            <StackIconElem />
 
           </div>
 
           {/* Hero Decorations */}
-          {/* <div className="absolute h-screen w-screen overflow-hidden"> */}
+          <div className="absolute inset-0 h-screen w-screen overflow-hidden pointer-events-none">
             {/* Circle background */}
-            {/* <div className="w-[923px] h-[923px] bg-dark-gray rounded-full  blur-3xl absolute origin-center top-50 left-115"></div> */}
+            <div className="
+                  absolute
+                  top-2/3
+                  left-1/2
+                  -translate-x-1/2 
+                  -translate-y-1/2
+                  aspect-square
+                  w-[70vw]
+                  max-w-[900px]
+                  min-w-[320px]
+                  bg-dark-gray 
+                  rounded-full  
+                  blur-3xl
+                "
+              />
             {/* Bottom Gradient */}
-            {/* <div className="w-screen h-screen bg-linear-0 from-neutral-black to-transparent absolute bottom-0"></div> */}
-          {/* </div> */}
+            <div className="
+                  absolute
+                  inset-x-0
+                  bottom-0 
+                  h-[80vh]
+                  bg-linear-0 from-neutral-black to-transparent
+                "
+            />
+          </div>
         </Section>
     )
 }

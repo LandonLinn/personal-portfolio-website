@@ -1,4 +1,4 @@
-const Primary_btn = ({ btn_text, link_styles, primary_btn_classes, link, downloadFile }) => {
+const PrimaryBtn = ({ btn_text, link_styles, primary_btn_classes, link, downloadFile }) => {
     return(
         <a href={link} className={link_styles} download={downloadFile}>
             <button 
@@ -10,4 +10,4 @@ const Primary_btn = ({ btn_text, link_styles, primary_btn_classes, link, downloa
     )
 }
 
-export default Primary_btn;
+export default PrimaryBtn;

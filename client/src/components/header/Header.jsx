@@ -1,4 +1,4 @@
-import Primary_btn from "../primary_button/Primary_btn";
+import Primary_btn from "../buttons/primary_button/PrimaryBtn";
 import LogoOccupation from "../logo-occupation/LogoOccupation";
 import NavLinks from "../nav-links/NavLinks";
 
