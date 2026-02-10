@@ -53,11 +53,11 @@ export const skills = [{
 
 const SkillCard = ({skillName, skillIcon, skillYear}) => {
     return(
-        <div className="border-neutral-gray border rounded-2xl text-left p-5 flex content-center justify-center">
+        <div className="bg-linear-45 from-accent-black to-neutral-black border-neutral-gray border rounded-2xl text-left p-5 flex content-center justify-center">
             {/* Icon & Name */}
             <div className="flex self-center gap-4">
                 <img className="my-auto h-10" src={skillIcon} alt={`${skillName} Icon`} />
-                <p className="my-auto"><strong>{skillName}</strong></p>
+                <p className="my-auto mr-1"><strong>{skillName}</strong></p>
             </div>
             <p className="ml-auto text-right text-neutral-gray self-center">{skillYear} Years of Experience</p>
         </div>

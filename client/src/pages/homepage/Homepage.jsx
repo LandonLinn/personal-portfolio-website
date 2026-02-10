@@ -6,13 +6,13 @@ import LatestBlogs from '../../sections/latest-blogs/LatestBlogs';
 
 const Homepage = () => {
     return(
-        <>
+        <main>
             <Hero />
             <About />
-            {/* <Skills /> */}
-            {/* <Contact /> */}
+            <Skills />
+            <Contact />
             {/* <LatestBlogs /> */}
-        </>
+        </main>
     )
 }
 

@@ -4,14 +4,15 @@ const SecondaryBtn = ({ btn_text, link_styles, secondary_btn_classes, link, down
             <button 
                 className={`
                         ${secondary_btn_classes} 
+                        secondary-btn
                         px-4 
                         py-2 
                         text-sm 
                         h-fit 
                         w-fit
-                        border-2
+                        border
                         border-white
-                        rounded-3xl 
+                        rounded-full 
                         md:px-8 
                         md:py-2 
                         font-bold 

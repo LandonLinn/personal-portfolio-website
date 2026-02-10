@@ -1,20 +1,30 @@
 import { getYear } from "../../utils/date";
+import LogoOccupation from "../logo-occupation/LogoOccupation";
+import SocialLinks from "../social-links/SocialLinks";
 
 const Footer = () => {
     return(
-        <footer className="">
+        <footer className="border-t border-neutral-gray">
             {/* Content */}
-            <div className="flex h-40">
-                <div className="px-20">
-                    <h2 className="mb-none">Landon Linn</h2>
-                    <p>Software Developer</p>
+            <div className="min-h-60 h-auto px-20 md:px-10 xl:px-20 py-4 text-center sm:text-left grid grid-cols-1 grid-rows-3 md:grid-rows-1 md:grid-cols-6 ">
+                <LogoOccupation />
+                
+                <div className="col-start-1 md:col-start-3">
+                    <p className="font-bold text-primary-blue">Explore</p>
                 </div>
+
+                <div>
+                    <p className="font-bold text-primary-blue">Work with Me</p>
+
+                </div>
+                
             </div>
 
             {/* Copyright & Socials */}
-            <div className="h-20 px-20 border-t border-neutral-gray flex content-center justify-between items-center">
+            <div className="h-[20dvh] md:h-[15dvh] px-20 md:px-10 xl:px-20 py-4 border-t border-neutral-gray flex flex-col md:flex-row gap-2 content-center justify-between items-center">
                 <p>&copy; {getYear()} Landon Linn</p>
                 {/* Social Links */}
+                <SocialLinks />
                 
             </div>
         </footer>

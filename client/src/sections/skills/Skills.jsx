@@ -8,18 +8,19 @@ import { certifications } from "../../components/certification-card/Certificatio
 import ExpertiseCard from "../../components/expertise-card/ExpertiseCard";
 import SkillCard from "../../components/skill-card/SkillCard";
 import CertificationCard from "../../components/certification-card/CertificationCard";
+import TaggedElement from "../../components/tagged-element/TaggedElement";
 
 
 
 const Skills = () => {
     return(
-        <Section sectionId='skills' sectionClass="w-screen col-span-full text-center flex align-center">
+        <Section sectionId='skills' sectionClass="w-screen col-span-full text-center flex align-center scroll-mt-25">
             <div className="text-center col-span-full flex flex-col">
-                <h2><span className="html-tag left-tag">&lt;h2&gt;</span>My Skills<span className="html-tag right-tag">&lt;/h2&gt;</span></h2>
+                <TaggedElement elementTag={"h2"} elementContent={"My Skills"} elementContainerClass={"justify-center"} />
                 {/* Expertise & Skill Cards */}
-                <div className="flex gap-2">
+                <div className="flex flex-col gap-2 xl:flex-row">
                     {/* Expertise cards */}
-                    <div className=" grid grid-cols-2 grid-rows-[120px_120px_120px_120px] gap-2 w-screen">
+                    <div className="grid grid-cols-1 gap-2 md:grid-cols-2 md:grid-rows-[120px_120px_120px_120px] xl:w-1/2 ">
                         {/* Front-End Development */}
                         <ExpertiseCard
                             expertiseClass="row-span-2"
@@ -71,10 +72,10 @@ const Skills = () => {
                                 </g>
                             </svg>}
                             expertiseName="UI/UX Design/Research"
-                            expertiseDesc="I bridge design and development by translating Figma designs into production-ready code with precision."
+                            expertiseDesc="I bridge UX research and UI design by transforming research insights into purposeful, user-centered experiences."
                         />
                     </div>
-                    <div className="grid grid-cols-2 grid-rows-[120px_120px_120px_120px] gap-2 w-screen">
+                    <div className="grid gap-2 grid-cols-1 md:grid-cols-2 md:grid-rows-[120px_120px_120px_120px] xl:w-1/2">
                         {skills.map((skill) =>(
                             <SkillCard 
                                 key={skill.id}
@@ -89,14 +90,16 @@ const Skills = () => {
                 {/* Certifications */}
                 <div className="mt-10">
                     {/* Section Title */}
-                    <h3 className="mb-5"><span className="html-tag left-tag">&lt;h3&gt;</span>Certifications<span className="html-tag right-tag">&lt;/h3&gt;</span></h3>
-                        
+                    <TaggedElement elementTag={"h3"} elementContent={"Certifications"} elementContainerClass={"justify-center mt-5 mb-2"} />                        
                     {/* Content */}
-                    <div className="grid grid-cols-4 gap-2">
+                    <div className="grid grid-cols-1 gap-2 md:grid-cols-2 xl:grid-cols-4">
                         {certifications.map((cert)=>(
                             <CertificationCard 
                                 key={cert.id}
-
+                                certImg={cert.coverImg}
+                                certDate={cert.completionDate}
+                                certName={cert.name}
+                                certLink={cert.link}
                             />
                         ))}
                     </div>

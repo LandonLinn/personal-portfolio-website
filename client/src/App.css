@@ -10,6 +10,7 @@
 
   /* Accent */
   --color-accent-blue: #0aefff;
+  --color-accent-black: #292F33;
 
   /* Neutral */
   --color-neutral-white: #f8f9fa;
@@ -72,3 +73,4 @@ h4{font-size: clamp(1.05rem, 1.3vw, 1.5rem);}
 h1,h2,h3,h4{font-weight: 700;}
 p{font-size: clamp(1rem, 1.1vw, 1.25rem); line-height:1.6;}
 .tag{font-size: clamp(.8rem, 1.1vw, 1rem); line-height:1;} 
+

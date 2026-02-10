@@ -9,7 +9,7 @@ import StackIconElem from "../../components/stack-icons/stack-icon-element/Stack
 
 const Hero = () => {
     return(
-        <Section sectionClass="h-screen ">
+        <Section sectionClass="h-screen pt-25!">
           <div className="text-center col-start-1 col-span-full flex flex-col gap-2 justify-center items-center content-center z-2">
             {/* Greeting */}
             <TaggedElement elementTag="p" elementContent={getHours()} elementClass="text-neutral-gray"/>
@@ -24,7 +24,7 @@ const Hero = () => {
             <TaggedElement elementTag="p" elementContent="Crafting clean interfaces and scalable web experiences with a strong focus on usability and performances." elementClass={" max-w-125"}/>
             
             {/* Resume Download & Porfolio Buttons */}
-            <TaggedElement elementTag="button" elementContent="Download Resume" />
+            <TaggedElement elementTag="hero-button" elementContent="Download Resume" />
 
             <SocialLinks 
                 linkClass="w-8 h-8 md:h-8"
@@ -38,7 +38,7 @@ const Hero = () => {
           </div>
 
           {/* Hero Decorations */}
-          <div className="absolute inset-0 h-screen w-screen overflow-hidden pointer-events-none">
+          <div className="absolute inset-0 h-screen w-screen overflow-hidden pointer-events-none opacity-30">
             {/* Circle background */}
             <div className="
                   absolute
