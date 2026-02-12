@@ -24,6 +24,10 @@ const TaggedElement = ({ elementContent, elementTag, elementClass, elementContai
     else if(elementTag==="button"){
         text = <PrimaryBtn btn_text={elementContent} primary_btn_classes="my-2" link={elementLink}/>
     }
+    else if(elementTag==="submit-button"){
+        text = <input type="submit"  className="px-4 py-2 text-sm bg-linear-to-tr from-primary-blue to-accent-blue
+                h-fit w-fit rounded-full md:px-8 md:py-2 font-bold hover:drop-shadow-sm hover:drop-shadow-accent-blue cursor-pointer"/>
+    }
     else{
         text = <div className="flex gap-2 items-center ">
             <PrimaryBtn btn_text="Download Resume" primary_btn_classes="my-2"/>
@@ -33,9 +37,9 @@ const TaggedElement = ({ elementContent, elementTag, elementClass, elementContai
 
     return(
         <div className={`${elementContainerClass} flex gap-4`}>
-            <Tag tagType="open" tagName={elementTag === "hero-button" ? elementTag="button" : elementTag} />
+            <Tag tagType="open" tagName={elementTag}/>
                 {text}
-            <Tag tagType="close" tagName={elementTag === "hero-button" ? elementTag="button" : elementTag} tagHidden={elementHidden} />
+            <Tag tagType="close" tagName={elementTag} tagHidden={elementHidden} />
         </div>
     )
 }

@@ -6,7 +6,7 @@ const Footer = () => {
     return(
         <footer className="border-t border-neutral-gray">
             {/* Content */}
-            <div className="min-h-60 h-auto px-20 md:px-10 xl:px-20 py-4 text-center sm:text-left grid grid-cols-1 grid-rows-3 md:grid-rows-1 md:grid-cols-6 ">
+            <div className="min-h-80 h-auto px-20 md:px-10 xl:px-20 py-8 text-center sm:text-left grid grid-cols-1 grid-rows-3 md:grid-rows-1 md:grid-cols-6 ">
                 <LogoOccupation />
                 
                 <div className="col-start-1 md:col-start-3">

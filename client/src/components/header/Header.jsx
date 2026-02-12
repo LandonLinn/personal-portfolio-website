@@ -1,17 +1,10 @@
 
-import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import Primary_btn from "../buttons/primary_button/PrimaryBtn";
 import LogoOccupation from "../logo-occupation/LogoOccupation";
 import NavLinks from "../nav-links/NavLinks";
-import MobileMenu from "../mobile-menu/MobileMenu";
 
-const Header = ({ handleOpen }) => {
-
-    const [isActive, setIsActive] = useState(true)
-
-    const handleActiveLink = () => setIsActive(prev => !prev);
-
-    
+const Header = ({ handleOpen, activeSection }) => {
 
     return(
         <header className="h-auto py-5 w-full border-b border-neutral-gray bg-neutral-black flex fixed z-100">
@@ -27,13 +20,14 @@ const Header = ({ handleOpen }) => {
                 </div>
                 
                 {/* Nav Items */}
-                <NavLinks isActive={handleActiveLink}/>
+                <NavLinks handleOpen={handleOpen} activeSection={activeSection} />
 
                 {/* Contact Button - Primary */}
                 <Primary_btn 
                     btn_text="Contact"
                     link_styles="my-auto ml-auto"
                     link="/#contact"
+                    onClick={() => {}}
                 />
 
                 

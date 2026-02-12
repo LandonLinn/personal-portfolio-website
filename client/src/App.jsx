@@ -16,22 +16,25 @@ import MobileMenu from './components/mobile-menu/MobileMenu';
 
 const App = () => {
 
+  // Handle Sidemenu opening
   const [open, setOpen] = useState(false);
-
   const handleOpen = () => setOpen(prev => !prev);
+
+  // Set active
+  const [activeSection, setActiveSection] = useState("");
 
   return (
     <>
         {/* Header */}
-        <Header handleOpen={handleOpen} />       
+        <Header handleOpen={handleOpen} activeSection={activeSection} />       
 
         <MobileMenu isOpen={open} handleOpen={handleOpen} />
 
         {/* Page Routes */}
         <Routes>
-          <Route path="/" element={<Homepage />} />
+          <Route path="/" element={<Homepage setActiveSection={activeSection} />} />
           <Route path="/projects" element={<ProjectPage />} />
-          <Route path="/articles" element={<ArticlePage />} />
+          {/* <Route path="/articles" element={<ArticlePage />} /> */}
           {/* 404 */}
           <Route path='*' element={<Error />}/>
         </Routes>
