@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@theme{
+@theme {
   /* Fonts */
   --primary-font: "Bree Serif", serif;
   --secondary-font: "Inter", sans-serif;

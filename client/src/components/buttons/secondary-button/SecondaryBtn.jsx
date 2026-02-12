@@ -16,6 +16,8 @@ const SecondaryBtn = ({ btn_text, link_styles, secondary_btn_classes, link, down
                         md:px-8 
                         md:py-2 
                         font-bold 
+                        transition-all
+                        duration-300
                         hover:text-accent-blue
                         hover:border-accent-blue
                         hover:cursor-pointer

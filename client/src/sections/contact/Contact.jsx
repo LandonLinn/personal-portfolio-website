@@ -9,7 +9,7 @@ import WorkCard from "../../components/work-card/WorkCard";
 
 const Contact = () => {
     return(
-        <Section sectionId='contact' sectionClass="col-span-full text-center flex align-center scroll-mt-25">
+        <Section sectionId='contact' sectionClass="col-span-full text-center flex align-center scroll-mt-18">
             <div className="text-center col-span-full flex flex-col items-center">
                 <TaggedElement elementTag={"h2"} elementContent={"Contact Me "} elementContainerClass={"justify-center"} />
                 <div className="p-2 md:p-8 w-full  lg:h-[80vh] lg:min-w-200 lg:max-w-300 lg:w-[80vw] bg-linear-45 from-accent-black to-neutral-black border-neutral-gray border rounded-2xl flex flex-col gap-2 lg:flex-row lg:gap-8">

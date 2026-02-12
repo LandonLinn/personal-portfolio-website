@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 
 // Components
@@ -16,23 +16,35 @@ import MobileMenu from './components/mobile-menu/MobileMenu';
 
 const App = () => {
 
-  // Handle Sidemenu opening
+  // Handle Side menu opening
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(prev => !prev);
 
-  // Set active
-  const [activeSection, setActiveSection] = useState("");
+  // Navigation
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const navigateTo = (id) => {
+  if (location.pathname !== "/") {
+    navigate("/", { state: { scrollTo: id } });
+    return;
+  }
+
+  document.getElementById(id)?.scrollIntoView({
+    behavior: "smooth",
+  });
+};
 
   return (
     <>
         {/* Header */}
-        <Header handleOpen={handleOpen} activeSection={activeSection} />       
+        <Header handleOpen={handleOpen} navigate={navigateTo}/>       
 
         <MobileMenu isOpen={open} handleOpen={handleOpen} />
 
         {/* Page Routes */}
         <Routes>
-          <Route path="/" element={<Homepage setActiveSection={activeSection} />} />
+          <Route path="/" element={<Homepage  />} />
           <Route path="/projects" element={<ProjectPage />} />
           {/* <Route path="/articles" element={<ArticlePage />} /> */}
           {/* 404 */}
@@ -40,7 +52,7 @@ const App = () => {
         </Routes>
 
         {/* Footer */}
-        <Footer />
+        <Footer navigate={navigateTo}/>
     </>
   )
 }

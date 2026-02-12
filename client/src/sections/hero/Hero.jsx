@@ -1,7 +1,6 @@
 import Section from "../Section";
 import SocialLinks from "../../components/social-links/SocialLinks";
 import TaggedElement from "../../components/tagged-element/TaggedElement";
-import PrimaryBtn from "../../components/buttons/primary_button/PrimaryBtn";
 
 // Functions
 import { getHours } from "../../utils/date";
@@ -10,7 +9,7 @@ import StackIconElem from "../../components/stack-icons/stack-icon-element/Stack
 const Hero = () => {
     return(
         <Section sectionClass="h-screen pt-25!">
-          <div className="text-center col-start-1 col-span-full flex flex-col gap-2 justify-center items-center content-center z-2">
+          <div className=" text-center col-start-1 col-span-full flex flex-col gap-2 justify-center items-center content-center z-2">
             {/* Greeting */}
             <TaggedElement elementTag="p" elementContent={getHours()} elementClass="text-neutral-gray"/>
 
@@ -23,7 +22,7 @@ const Hero = () => {
             {/* Description */}
             <TaggedElement elementTag="p" elementContent="Crafting clean interfaces and scalable web experiences with a strong focus on usability and performances." elementClass={" max-w-125"}/>
             
-            {/* Resume Download & Porfolio Buttons */}
+            {/* Resume Download & Portfolio Buttons */}
             <TaggedElement elementTag="hero-button" elementContent="Download Resume" />
 
             <SocialLinks 
@@ -38,7 +37,7 @@ const Hero = () => {
           </div>
 
           {/* Hero Decorations */}
-          <div className="absolute inset-0 h-screen w-screen overflow-hidden pointer-events-none opacity-30">
+          <div className="absolute inset-0 h-screen w-full overflow-hidden pointer-events-none opacity-30">
             {/* Circle background */}
             <div className="
                   absolute
@@ -48,7 +47,7 @@ const Hero = () => {
                   -translate-y-1/2
                   aspect-square
                   w-[70vw]
-                  max-w-[900px]
+                  max-w-225
                   min-w-[320px]
                   bg-dark-gray 
                   rounded-full  

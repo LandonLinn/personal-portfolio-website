@@ -1,5 +1,5 @@
 import LogoOccupation from "../logo-occupation/LogoOccupation";
-import NavLinks from "../nav-links/NavLinks";
+import NavLinks from "../navigation/nav-links/NavLinks";
 
 const MobileMenu = ({ isOpen, handleOpen }) => {
     return(

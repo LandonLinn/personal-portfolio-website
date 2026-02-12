@@ -30,8 +30,8 @@ const TaggedElement = ({ elementContent, elementTag, elementClass, elementContai
     }
     else{
         text = <div className="flex gap-2 items-center ">
-            <PrimaryBtn btn_text="Download Resume" primary_btn_classes="my-2"/>
-            <SecondaryBtn btn_text="View Projects" secondary_btn_classes="my-2"/>
+            <PrimaryBtn btn_text="Download Resume" primary_btn_classes="my-2" link={"/resume/LandonLinn_Resume.pdf"} downloadFile={"LandonLinn_Resume"}/>
+            <SecondaryBtn btn_text="View Projects" secondary_btn_classes="my-2" link={"/projects"}/>
         </div>
     }
 

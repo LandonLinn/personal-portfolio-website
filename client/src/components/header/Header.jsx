@@ -2,9 +2,9 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import Primary_btn from "../buttons/primary_button/PrimaryBtn";
 import LogoOccupation from "../logo-occupation/LogoOccupation";
-import NavLinks from "../nav-links/NavLinks";
+import NavLinks from "../navigation/nav-links/NavLinks";
 
-const Header = ({ handleOpen, activeSection }) => {
+const Header = ({ handleOpen, navigate }) => {
 
     return(
         <header className="h-auto py-5 w-full border-b border-neutral-gray bg-neutral-black flex fixed z-100">
@@ -20,18 +20,15 @@ const Header = ({ handleOpen, activeSection }) => {
                 </div>
                 
                 {/* Nav Items */}
-                <NavLinks handleOpen={handleOpen} activeSection={activeSection} />
+                <NavLinks handleOpen={handleOpen} navigate={navigate} />
 
                 {/* Contact Button - Primary */}
                 <Primary_btn 
                     btn_text="Contact"
                     link_styles="my-auto ml-auto"
                     link="/#contact"
-                    onClick={() => {}}
+                    onClick={()=>navigate("contact")}
                 />
-
-                
-                
             </div>
         </header>
     )

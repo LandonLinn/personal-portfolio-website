@@ -4,7 +4,7 @@ import Tag from "../../components/tag/Tag";
 
 const About = () => {
     return(
-        <Section sectionId='about' sectionClass="scroll-mt-25">
+        <Section sectionId='about' sectionClass="scroll-mt-18">
             <div className="col-span-full flex flex-col">
                 <TaggedElement elementTag="h2" elementContent="About Me" elementContainerClass="justify-center"/>
             </div>

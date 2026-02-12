@@ -10,7 +10,7 @@ const Section = ({children, sectionClass, sectionId}) => {
                             lg:grid-cols-6 
                             gap-5 
                             py-5 
-                            px-5 
+                            px-5
                             md:py-10 
                             md:px-10
                             xl:px-20

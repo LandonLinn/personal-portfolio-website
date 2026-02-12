@@ -14,7 +14,7 @@ import TaggedElement from "../../components/tagged-element/TaggedElement";
 
 const Skills = () => {
     return(
-        <Section sectionId='skills' sectionClass="w-screen col-span-full text-center flex align-center scroll-mt-25">
+        <Section sectionId='skills' sectionClass="w-full col-span-full text-center flex align-center scroll-mt-18">
             <div className="text-center col-span-full flex flex-col">
                 <TaggedElement elementTag={"h2"} elementContent={"My Skills"} elementContainerClass={"justify-center"} />
                 {/* Expertise & Skill Cards */}
