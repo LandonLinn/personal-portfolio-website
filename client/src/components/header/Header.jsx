@@ -27,7 +27,7 @@ const Header = ({ handleOpen, navigate }) => {
                     btn_text="Contact"
                     link_styles="my-auto ml-auto"
                     link="/#contact"
-                    onClick={()=>navigate("contact")}
+                    navigate={()=>navigate}
                 />
             </div>
         </header>
