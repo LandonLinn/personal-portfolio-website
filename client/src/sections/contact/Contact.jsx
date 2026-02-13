@@ -91,7 +91,6 @@ const Contact = () => {
                                 />
                             
                             </div>
-
                             {/* 4 Contact Cards */}
                             <div className="">
                                 <TaggedElement elementTag={"h4"} elementContent={"Available For"} elementContainerClass={"justify-center"}/>
