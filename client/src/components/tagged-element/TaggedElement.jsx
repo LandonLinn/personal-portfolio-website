@@ -3,7 +3,7 @@ import Tag from "../tag/Tag";
 import PrimaryBtn from "../buttons/primary_button/PrimaryBtn";
 import SecondaryBtn from "../buttons/secondary-button/SecondaryBtn";
 
-const TaggedElement = ({ elementContent, elementTag, elementClass, elementContainerClass, elementHidden, elementLink }) => {
+const TaggedElement = ({ elementContent, elementTag, elementClass, elementContainerClass, elementHidden, elementLink, elementValue }) => {
     let text;
 
     if(elementTag === "h1"){
@@ -25,7 +25,7 @@ const TaggedElement = ({ elementContent, elementTag, elementClass, elementContai
         text = <PrimaryBtn btn_text={elementContent} primary_btn_classes="my-2" link={elementLink}/>
     }
     else if(elementTag==="submit-button"){
-        text = <input type="submit"  className="px-4 py-2 text-sm bg-linear-to-tr from-primary-blue to-accent-blue
+        text = <input type="submit" value={elementValue} className="px-4 py-2 text-sm bg-linear-to-tr from-primary-blue to-accent-blue
                 h-fit w-fit rounded-full md:px-8 md:py-2 font-bold hover:drop-shadow-sm hover:drop-shadow-accent-blue cursor-pointer"/>
     }
     else{

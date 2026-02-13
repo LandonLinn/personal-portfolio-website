@@ -4,10 +4,47 @@ import Input from "../../components/form/Input";
 import ContactCard from "../../components/contact-info-card/ContactCard";
 import WorkCard from "../../components/work-card/WorkCard";
 
-// const SERVICE_ID = import.meta.env.SERVICE_ID;
-// console.log(SERVICE_ID);
+//Email JS Setup
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
+import { useState } from "react";
+
+// Email JS Variables
+const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 const Contact = () => {
+
+    const [status, setStatus] = useState("");
+    const [isSent, setIsSent] = useState("")
+    const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        setStatus("Sending message...");
+
+         emailjs
+            .sendForm(serviceId, templateId, form.current, {
+                publicKey,
+            })
+            .then(
+            () => {
+                setStatus('Message sent!');
+                setIsSent(true);
+            },
+            (error) => {
+                console.log('Message failed to send. Try again later.');
+                setIsSent(false)
+            },
+
+            setTimeout(() => {
+                setIsSent("");
+            }, 5000)
+        );
+  };
+
     return(
         <Section sectionId='contact' sectionClass="col-span-full text-center flex align-center scroll-mt-18">
             <div className="text-center col-span-full flex flex-col items-center">
@@ -43,7 +80,7 @@ const Contact = () => {
                                     rel={"noreferrer noopener"}
                                     linkName={"Alpharetta, GA"} 
                                     svg={<svg className="mx-auto" width="24px" height="24px" viewBox="-3 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                            <g id="Page-1" stroke="none" stroke-width="1" fill="#fff">
+                                            <g id="Page-1" stroke="none" stroke--width="1" fill="#fff">
                                                 <g id="Dribbble-Light-Preview" transform="translate(-223.000000, -5399.000000)" fill="#fff">
                                                     <g id="icons" transform="translate(56.000000, 160.000000)">
                                                         <path d="M174,5248.219 C172.895,5248.219 172,5247.324 172,5246.219 C172,5245.114 172.895,5244.219 174,5244.219 C175.105,5244.219 176,5245.114 176,5246.219 C176,5247.324 175.105,5248.219 174,5248.219 M174,5239 C170.134,5239 167,5242.134 167,5246 C167,5249.866 174,5259 174,5259 C174,5259 181,5249.866 181,5246 C181,5242.134 177.866,5239 174,5239"></path>
@@ -70,7 +107,7 @@ const Contact = () => {
 
                     {/* Contact Form Side */}
                     <div className="w-full lg:w-1/2 h-full rounded-lg p-2 ">
-                        <form action="" className="flex flex-col gap-2 w-full h-full">
+                        <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-2 w-full h-full">
                             {/* First & Last */}
                             <div className="flex flex-col lg:flex-row gap-2">
                                 {/* First */}
@@ -91,9 +128,12 @@ const Contact = () => {
                             <Input inputType={"tel"} inputId={"phone"} inputName={"phone"} inputPlace={"Phone Number"} isRequired={false} inputClass={""} />
 
                             {/* Message */}
-                            <textarea type="text" id="message" name="message" placeholder="Message" required className="border border-neutral-gray h-full rounded-3xl mb-6 px-8 py-4 w-full focus:border-primary-blue focus:outline-0"/>
+                            <textarea type="text" id="message" name="message" placeholder="Message" required className="border border-neutral-gray h-full rounded-3xl mb-1 px-8 py-4 w-full focus:border-primary-blue focus:outline-0"/>
 
-                            <TaggedElement elementTag={"submit-button"} elementContainerClass={"justify-center mt-auto"} />
+                            {/* Status Message */}
+                            <p className={`${isSent === true ? "success" : "" || isSent === false ? "error" : ""} mb-auto py-1 text-sm!`}>{status}</p>
+
+                            <TaggedElement elementTag={"submit-button"} elementValue={"Send"} elementContainerClass={"justify-center mt-auto"} />
 
                         </form>
 
