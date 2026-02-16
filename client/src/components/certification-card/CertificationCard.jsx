@@ -34,7 +34,7 @@ const CertificationCard = ({ certImg, certName, certDate, certLink }) => {
         <>
             <div className="p-2 text-left bg-linear-45 from-accent-black to-neutral-black border border-neutral-gray h-80 rounded-2xl flex flex-col">
                 {/* Image Wrapper */}
-                <div className="h-[55%] w-full rounded-lg bg-white overflow-hidden flex items-center justify-center">
+                <div className="h-[55%] w-full rounded-xl bg-white overflow-hidden flex items-center justify-center">
                     <img
                     src={certImg}
                     alt={`${certName} Cover Image`}

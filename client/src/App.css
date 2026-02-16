@@ -82,3 +82,31 @@ p{font-size: clamp(1rem, 1.1vw, 1.25rem); line-height:1.6;}
 .error{
   color: red;
 }
+
+/* Project Tags */
+.ui-tag {
+  background-color: #2563eb;   /* Soft modern blue */
+  color: white;
+}
+
+.front-tag {
+  background-color: #06b6d4;   /* Cyan / frontend vibe */
+  color: white;
+}
+
+.back-tag {
+  background-color: #10b981;   /* Emerald green */
+  color: white;
+}
+
+.graphic-tag {
+  background-color: #a855f7;   /* Modern purple */
+  color: white;
+}
+
+/* Active Filter */
+.activeFilter{
+  border: 2px solid var(--color-accent-blue);
+  color: var(--color-accent-blue);
+  font-weight: 700;
+}

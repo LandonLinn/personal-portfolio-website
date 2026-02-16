@@ -1,6 +1,6 @@
 import Tag from "../tag/Tag";
 
-import PrimaryBtn from "../buttons/primary_button/PrimaryBtn";
+import PrimaryBtn from "../buttons/primary-button/PrimaryBtn";
 import SecondaryBtn from "../buttons/secondary-button/SecondaryBtn";
 
 const TaggedElement = ({ elementContent, elementTag, elementClass, elementContainerClass, elementHidden, elementLink, elementValue }) => {

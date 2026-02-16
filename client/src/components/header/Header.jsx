@@ -1,6 +1,6 @@
 
 import { useNavigate, useLocation } from "react-router-dom";
-import Primary_btn from "../buttons/primary_button/PrimaryBtn";
+import Primary_btn from "../buttons/primary-button/PrimaryBtn";
 import LogoOccupation from "../logo-occupation/LogoOccupation";
 import NavLinks from "../navigation/nav-links/NavLinks";
 
