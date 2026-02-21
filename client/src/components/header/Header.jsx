@@ -26,8 +26,8 @@ const Header = ({ handleOpen, navigate }) => {
                 <Primary_btn 
                     btn_text="Contact"
                     link_styles="my-auto ml-auto"
-                    link="/#contact"
-                    navigate={()=>navigate}
+                    routeID={"contact"}
+                    navigate={navigate}
                 />
             </div>
         </header>
