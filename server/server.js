@@ -1,34 +1,68 @@
-import express from "express";
-import mongoose from "mongoose";
-import cors from "cors";
-import dotenv from "dotenv";
+// Requires
+const express = require('express');
+const dotenv = require("dotenv");
+const cors = require("cors");
+const mongoose = require('mongoose')
 
-// Express Setup
+// Setup app
 const app = express();
+
+// Load environment Variables
 dotenv.config();
+PORT = process.env.PORT || 8080;
+MONGO_URI = process.env.MONGO_URI;
+
+// Setup middleware
 app.use(cors());
 app.use(express.json());
 
-// .env Variables
-const PORT = process.env.PORT || 5000;
-const MONGO_URI = process.env.MONGO_URI;
-
-app.get("/", (req, res) => {
-    res.send("API Running");
+// API Test
+app.get("/api", (req, res) => {
+    res.json({ok: true})
 })
 
-app.get("/api/health", (req, res) => res.json({ok:true}));
+// Connect mongoose
+mongoose
+    .connect(MONGO_URI, { dbName: "portfoliodb" })
+    .then(() => {
+    console.log("Starting DB");
+    app.listen(PORT, () => {
+    console.log(`App listening on port ${PORT}`);
+    console.log("DB name:", mongoose.connection.name);
+    })
+}).catch((err) => console.error(err))
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+
+const projectSchema = new mongoose.Schema({
+    slug: String,
+    name: String,
+    description: String,
+    tags: [String],
+    date: String,
+    featured: Boolean,
+    coverImg: String,
+    links: {
+        github: String,
+        live: String
+    },
+    techStack: [String],
+    features: [String],
+    future_features: [String],
+    challenges: [String],
+    goals: [String],
+    images: [String]
 });
 
-(async () => {
-    try{
-        console.log("Connecting to Mongo...");
-        await mongoose.connect(MONGO_URI, {serverSelectionTimeoutMS: 5000});
-        console.log("Mongo Connected.")
-    } catch (err){
-        console.error("Mongo failed to connect:", err);
-    }
-})();
+const ProjectModel = mongoose.model("projects", projectSchema);
+
+app.get("/api/projects", async (req, res) => {
+    const projects = await ProjectModel.find();
+    res.json(projects);
+});
+
+app.get("/api/projects/:slug", async (req, res) => {
+    const project = await ProjectModel.findOne({ slug: req.params.slug });
+    if (!project) return res.status(404).json({message: "Project not found"}); 
+    res.json(project);
+});
+

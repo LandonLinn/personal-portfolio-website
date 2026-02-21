@@ -12,6 +12,7 @@ import ArticlePage from './pages/article-page/ArticlePage';
 import Homepage from './pages/homepage/Homepage';
 import Error from './pages/404-page/Error';
 import MobileMenu from './components/mobile-menu/MobileMenu';
+import ProjectDetails from './pages/project-details/ProjectDetails';
 
 
 const App = () => {
@@ -46,6 +47,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Homepage  />} />
           <Route path="/projects" element={<ProjectPage />} />
+          <Route path="/api/projects/:slug" element={<ProjectDetails />} />
           {/* <Route path="/articles" element={<ArticlePage />} /> */}
           {/* 404 */}
           <Route path='*' element={<Error />}/>

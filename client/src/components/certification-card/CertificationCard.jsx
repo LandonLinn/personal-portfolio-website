@@ -47,12 +47,13 @@ const CertificationCard = ({ certImg, certName, certDate, certLink }) => {
                     <p className="text-neutral-gray text-sm">{certDate}</p>
                     <p className="font-semibold">{certName}</p>
                     <a
-                    className="text-neutral-white mt-auto inline-block"
+                    className="flex items-center gap-2 transition-all duration-300 hover:gap-3 mt-auto"
                     href={certLink}
                     rel="nopener noreferrer"
                     target="_blank"
                     >
-                    View Certificate &rarr;
+                        <p>View Certificate</p>
+                        <p>&rarr;</p>       
                     </a>
                 </div>
                 </div>

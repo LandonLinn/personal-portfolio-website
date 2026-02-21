@@ -1,9 +1,19 @@
 import Section from "../Section";
 import TaggedElement from "../../components/tagged-element/TaggedElement";
 import ProjectCard from "../../components/project-card/ProjectCard";
-import { mockProjects } from "../../utils/mockProjectData";
+import { useState, useEffect } from "react";
 
 const Projects = () => {
+    // Projects from Mongo
+        const [projects, setProjects] = useState([]);
+    
+        useEffect(() => {
+            fetch("http://localhost:5000/api/projects")
+                .then(res => res.json())
+                .then(data => setProjects(data))
+                .catch(err => console.error("Failed to fetch projects:", err));
+        }, [])
+
     return(
         <Section sectionClass="col-span-full text-center flex align-center scroll-mt-25">
             <div className="text-center col-span-full flex flex-col">
@@ -11,16 +21,17 @@ const Projects = () => {
 
                 {/* Projects Shown (4 best) */}
                 <div className="mb-4 md:w-full h-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 grid-rows-auto gap-2">
-                    {mockProjects.map((projects) => 
-                        projects.featured === true ? (  
-                            <ProjectCard 
-                                key={projects.id}
-                                coverImg={projects.coverImg}
-                                title={projects.title} 
-                                tags={projects.tags} 
-                                date={projects.date}
-                                description={projects.description}
-                                links={projects.links}
+                    {projects.map((p) => 
+                       p.featured === true ? (
+                            <ProjectCard
+                                key={p._id}
+                                slug={p.slug}
+                                coverImg={p.coverImg}
+                                date={p.date}
+                                name={p.name}
+                                tags={p.tags}
+                                description={p.description}
+                                links={p.links}
                             />
                         ) : null
                     )}

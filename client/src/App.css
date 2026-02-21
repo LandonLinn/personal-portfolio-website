@@ -110,3 +110,16 @@ p{font-size: clamp(1rem, 1.1vw, 1.25rem); line-height:1.6;}
   color: var(--color-accent-blue);
   font-weight: 700;
 }
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }
+}
+
