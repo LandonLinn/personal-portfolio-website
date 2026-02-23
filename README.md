@@ -33,8 +33,6 @@ This project solves that by providing a dynamic platform to manage projects, blo
 
 ## Features
 - Project showcase with filtering and tagging
-- Blog system for sharing development insights
-- Admin dashboard for managing projects and posts
 - Contact form with EmailJS
 - Responsive TailwindCSS design
 - SEO-friendly structure
