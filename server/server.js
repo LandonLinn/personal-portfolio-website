@@ -15,8 +15,9 @@ const MONGO_URI = process.env.MONGO_URI;
 // Setup middleware
 const whitelist = [
     "http://localhost:5173",
-    // Add Netlify Route
+    "https://personal-port-site.netlify.app/"
 ];
+
 app.use(cors({
     origin: whitelist
 }));
