@@ -13,7 +13,13 @@ const PORT = process.env.PORT || 8080;
 const MONGO_URI = process.env.MONGO_URI;
 
 // Setup middleware
-app.use(cors());
+const whitelist = [
+    "http://localhost:5173",
+    // Add Netlify Route
+];
+app.use(cors({
+    origin: whitelist
+}));
 app.use(express.json());
 
 // Schema

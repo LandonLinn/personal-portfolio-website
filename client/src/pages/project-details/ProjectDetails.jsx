@@ -10,7 +10,7 @@ const ProjectDetails = () => {
 
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/projects/${slug}`)
+    fetch(`${import.meta.env.VITE_API_URL}/api/projects/${slug}`)
       .then(r => r.json())
       .then(data => setProject(data))
       .catch(e => console.error("Failed to fetch project:", e));
