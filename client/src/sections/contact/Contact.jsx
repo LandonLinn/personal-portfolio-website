@@ -35,12 +35,14 @@ const Contact = () => {
                 setIsSent(true);
             },
             (error) => {
-                console.log('Message failed to send. Try again later.');
+                console.error(error);
+                setStatus('Message failed to send. Try again later.')
                 setIsSent(false)
             },
 
             setTimeout(() => {
                 setIsSent("");
+                setStatus("");
             }, 5000)
         );
   };
