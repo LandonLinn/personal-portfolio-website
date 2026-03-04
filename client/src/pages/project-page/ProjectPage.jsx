@@ -15,6 +15,9 @@ const ProjectPage = () => {
 
     // Projects from Mongo
     const [projects, setProjects] = useState([]);
+    const filteredProjects = projects.filter(p =>
+        projectFilter === "All Projects" || p.tags.includes(projectFilter)
+    );
 
     useEffect(() => {
         fetch("http://localhost:5000/api/projects")
@@ -55,10 +58,12 @@ const ProjectPage = () => {
                 {/* Cards */}
                 <div className="col-span-full">
                     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 grid-rows-auto gap-2 row-span-auto">
-                        {projects.map((p) => 
-                        p.tags.includes(projectFilter) || projectFilter === "All Projects" ?
-                        (
-                            <ProjectCard
+
+                        {filteredProjects.length === 0 ? (
+                            <p className="col-span-full mx-auto h-50">No Projects Yet.</p>
+                        ) : (
+                            filteredProjects.map(p => (
+                                <ProjectCard
                                 key={p._id}
                                 slug={p.slug}
                                 coverImg={p.coverImg}
@@ -67,11 +72,10 @@ const ProjectPage = () => {
                                 tags={p.tags}
                                 description={p.description}
                                 links={p.links}
-                            />
-                        ) : (
-                            <p className="col-span-full mx-auto h-50">No Projects Yet.</p>
-                        )
+                                />
+                            ))
                         )}
+
                     </div>
 
                 </div>
