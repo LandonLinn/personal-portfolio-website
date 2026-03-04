@@ -1,6 +1,25 @@
 {
+  "name": "personal-portfolio-website",
+  "version": "1.0.0",
+  "description": "A full-stack portfolio application built with React, Express, MongoDB, and AWS to showcase projects, UX work, freelance experience, and technical skills in a scalable, real-world environment.",
+  "homepage": "https://github.com/LandonLinn/personal-portfolio-website#readme",
+  "bugs": {
+    "url": "https://github.com/LandonLinn/personal-portfolio-website/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LandonLinn/personal-portfolio-website.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "emailjs": "^5.0.0"
+    "emailjs": "^5.0.0",
+    "mongodb": "^7.1.0"
   }
 }

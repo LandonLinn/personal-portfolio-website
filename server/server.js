@@ -9,12 +9,35 @@ const app = express();
 
 // Load environment Variables
 dotenv.config();
-PORT = process.env.PORT || 8080;
-MONGO_URI = process.env.MONGO_URI;
+const PORT = process.env.PORT || 8080;
+const MONGO_URI = process.env.MONGO_URI;
 
 // Setup middleware
 app.use(cors());
 app.use(express.json());
+
+// Schema
+const projectSchema = new mongoose.Schema({
+    slug: String,
+    name: String,
+    description: String,
+    tags: [String],
+    date: String,
+    featured: Boolean,
+    coverImg: String,
+    links: {
+        github: String,
+        live: String
+    },
+    tech_stack: [String],
+    features: [String],
+    future_features: [String],
+    challenges: [String],
+    goals: [String],
+    images: [String]
+});
+
+const ProjectModel = mongoose.model("projects", projectSchema);
 
 // API Test
 app.get("/api", (req, res) => {
@@ -32,32 +55,13 @@ mongoose
     })
 }).catch((err) => console.error(err))
 
-
-const projectSchema = new mongoose.Schema({
-    slug: String,
-    name: String,
-    description: String,
-    tags: [String],
-    date: String,
-    featured: Boolean,
-    coverImg: String,
-    links: {
-        github: String,
-        live: String
-    },
-    techStack: [String],
-    features: [String],
-    future_features: [String],
-    challenges: [String],
-    goals: [String],
-    images: [String]
-});
-
-const ProjectModel = mongoose.model("projects", projectSchema);
-
 app.get("/api/projects", async (req, res) => {
-    const projects = await ProjectModel.find();
-    res.json(projects);
+    try {
+        const projects = await ProjectModel.find();
+        res.json(projects);
+    } catch (err) {
+        res.status(500).json({ message: "Server error", error: err.message });
+    }
 });
 
 app.get("/api/projects/:slug", async (req, res) => {

@@ -24,19 +24,21 @@ const ProjectPage = () => {
     }, [])
 
     return(
-        <main className="min-h-screen pt-25!">
+        <main className="min-h-screen pt-12!">
             <Section sectionClass="">
                 {/* Page Hero */}
                 
-                <div className="h-40 col-span-full flex flex-col flex-1 mx-auto text-shadow-2xl text-center my-auto z-1">
-                    <TaggedElement elementTag={"h1"} elementContent={"Projects"} elementContainerClass={"justify-center"} />
-                    <TaggedElement elementTag={"p"} elementContent={"A collection of full-stack, UX, and branding projects focused on building scalable, user-centered digital products."} elementContainerClass={"max-w-250 justify-center"} elementClass={"drop-shadow-2xl"}/>
+                <div className="relative h-60 col-span-full flex flex-col flex-1 mx-auto text-shadow-2xl text-center my-auto z-1">
+                    <div className="my-auto">
+                        <TaggedElement elementTag={"h1"} elementContent={"Projects"} elementContainerClass={"justify-center"} />
+                        <TaggedElement elementTag={"p"} elementContent={"A collection of full-stack, UX, and branding projects focused on building scalable, user-centered digital products."} elementContainerClass={"max-w-250 justify-center"} elementClass={"drop-shadow-2xl"}/>
                     {/* Background */}
-                    <div className="absolute inset-0 h-80 object-cover overflow-hidden -z-100 ">
+                    </div>
+                    
+                    <div className="absolute h-full left-1/2 w-screen object-cover overflow-hidden -z-100 -translate-x-1/2">
                         <div className="bg-linear-0 from-neutral-black to-transparent absolute inset-0 opacity-60" />
                         <div className="bg-linear-45 from-primary-blue to-accent-blue absolute inset-0 opacity-100" />
                     </div>
-                
                 </div>
                 
 
