@@ -33,6 +33,7 @@ const Contact = () => {
             () => {
                 setStatus('Message sent!');
                 setIsSent(true);
+                form.current.reset();
             },
             (error) => {
                 console.error(error);

@@ -41,7 +41,7 @@ const About = () => {
                     <TaggedElement elementTag={"h3"} elementContent={"Work Experience"} />
                     {/* Linnium */}
                     <TaggedElement elementHidden={"true"} elementTag={"h4"} elementContent={"Linnium - Founder & Consultant | Aug 2024 - Present"}/>
-                    <TaggedElement elementHidden={"true"} elementTag={"p"} elementContent={`Founded Linnium, delivering full-stack development, UX/UI design, and digital 
+                    <TaggedElement elementHidden={"true"} elementTag={"p"} elementContent={`Founded Linnium, LLC, delivering full-stack development, UX/UI design, and digital 
                         consulting. Led end-to-end projects from discovery through 
                         development, collaborating with stakeholders to build scalable, 
                         user-focused solutions.`}/>
