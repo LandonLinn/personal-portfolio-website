@@ -26,7 +26,7 @@ const About = () => {
                     <TaggedElement elementHidden={"true"} elementTag={"p"} elementClass={"md:ml-2"} elementContent={`I specialize in designing and building modern full-stack web 
                         experiences with a strong focus on usability and visual clarity. 
                         By combining UX strategy, interface design, and full-stack development, 
-                        I create products that are both functional and visually refined.`}
+                        I create applications that are both functional and visually refined.`}
                         />
                 </div>
                 
@@ -40,7 +40,7 @@ const About = () => {
                 <div className=" lg:col-start-1 lg:col-span-full xl:col-start-2">
                     <TaggedElement elementTag={"h3"} elementContent={"Work Experience"} />
                     {/* Linnium */}
-                    <TaggedElement elementHidden={"true"} elementTag={"h4"} elementContent={"Linnium - Founder & Consultant | Aug 2024 - Present"}/>
+                    <TaggedElement elementHidden={"true"} elementTag={"h4"} elementContent={"Linnium - Founder & Consultant | Aug 2025 - Present"}/>
                     <TaggedElement elementHidden={"true"} elementTag={"p"} elementClass={"md:ml-2"} elementContent={`Founded Linnium, LLC, delivering full-stack development, UX/UI design, and digital 
                         consulting. Led end-to-end projects from discovery through 
                         development, collaborating with stakeholders to build scalable, 
