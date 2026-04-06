@@ -25,8 +25,8 @@ const TaggedElement = ({ elementContent, elementTag, elementClass, elementContai
         text = <PrimaryBtn btn_text={elementContent} primary_btn_classes="my-2" link={elementLink}/>
     }
     else if(elementTag==="submit-button"){
-        text = <input type="submit" value={elementValue} className="px-4 py-2 text-sm bg-linear-to-tr from-primary-blue to-accent-blue
-                h-fit w-fit rounded-full md:px-8 md:py-2 font-bold hover:drop-shadow-sm hover:drop-shadow-accent-blue cursor-pointer"/>
+        text = <input type="submit" value={elementValue} className="px-4 text-sm bg-linear-to-tr from-primary-blue to-accent-blue
+                h-12 w-fit rounded-full md:px-8 md:py-2 font-bold hover:drop-shadow-sm hover:drop-shadow-accent-blue cursor-pointer"/>
     }
     else{
         text = <div className="flex gap-2 items-center ">

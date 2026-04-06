@@ -6,9 +6,8 @@ const SecondaryBtn = ({ btn_text, link_styles, secondary_btn_classes, link, down
                         ${secondary_btn_classes} 
                         secondary-btn
                         px-4 
-                        py-2 
                         text-sm 
-                        h-fit 
+                        h-12 
                         w-fit
                         border
                         border-white

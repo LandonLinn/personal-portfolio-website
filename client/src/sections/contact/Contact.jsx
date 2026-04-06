@@ -53,9 +53,9 @@ const Contact = () => {
                 <TaggedElement elementTag={"h2"} elementContent={"Contact Me "} elementContainerClass={"justify-center"} />
                 <div className="p-2 md:p-8 w-full overflow-hidden lg:h-[80vh] lg:min-w-200 lg:max-w-300 lg:w-[80vw] bg-linear-45 from-accent-black to-neutral-black border-neutral-gray border rounded-2xl flex flex-col gap-2 lg:flex-row lg:gap-8">
                     {/* Text Side */}
-                    <div className="h-full w-full lg:w-1/2 lg:h-fit flex flex-col justify-center text-center">
+                    <div className="w-full lg:w-1/2 h-full flex flex-col text-center">
                         <TaggedElement elementTag={"h3"} elementContent={"Lets Work Together"} elementContainerClass={"justify-center"}/>
-                        <div className="h-full!">
+                        <div className="h-full">
                             {/* Contact Info Cards */}
                             <div className="my-4 flex gap-2 flex-wrap">
                                 {/* Phone */}
@@ -94,9 +94,9 @@ const Contact = () => {
                             
                             </div>
                             {/* 4 Contact Cards */}
-                            <div>
+                            <div className="flex flex-col flex-1">
                                 <TaggedElement elementTag={"h4"} elementContent={"Available For"} elementContainerClass={"justify-center"}/>
-                                <div className="grid grid-cols-2 grid-rows-2 gap-2 my-4 h-full!">
+                                <div className="grid grid-cols-2 gap-2 mt-4">
                                     <WorkCard imgSrc={"/work-icons/full-time-icon.png"} altText={"Clock"} workType={"Full-Time"}/>
                                     <WorkCard imgSrc={"/work-icons/contract-icon.png"} altText={"Paper and pen"} workType={"Contract"}/>
                                     <WorkCard imgSrc={"/work-icons/project-icon.png"} altText={"Lightbulb"} workType={"Project-Based"}/>
