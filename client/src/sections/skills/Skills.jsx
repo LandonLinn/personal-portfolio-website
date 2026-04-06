@@ -103,6 +103,8 @@ const Skills = () => {
                             />
                         ))}
                     </div>
+                    {/* See all badges button */}
+                    <TaggedElement elementTag={"button"} elementContent={"See all Badges"} elementContainerClass={"justify-center mt-4"} elementLink={"https://www.credly.com/users/landon-linn/badges#credly"}/>
                 </div>
                 
             </div>
