@@ -23,7 +23,7 @@ const About = () => {
                 {/* What I do */}
                 <div className="">
                     <TaggedElement elementTag={"h3"} elementContent={"What I Do"}/>
-                    <TaggedElement elementHidden={"true"} elementTag={"p"} elementContent={`I specialize in designing and building modern full-stack web 
+                    <TaggedElement elementHidden={"true"} elementTag={"p"} elementClass={"md:ml-2"} elementContent={`I specialize in designing and building modern full-stack web 
                         experiences with a strong focus on usability and visual clarity. 
                         By combining UX strategy, interface design, and full-stack development, 
                         I create products that are both functional and visually refined.`}
@@ -34,21 +34,21 @@ const About = () => {
                 <div className="md:col-start-1 lg:col-start-2">
                     <TaggedElement elementTag={"h3"} elementContent={"Education"} />
                     <TaggedElement elementHidden={"true"} elementTag={"h4"} elementContent={"Bachelor of Science in Information Science (UX Design Concentration)"} />
-                    <TaggedElement elementHidden={"true"} elementTag={"p"} elementContent={"University of Tennessee, Knoxville | Graduated May 2025 | GPA: 3.22"}/>
+                    <TaggedElement elementHidden={"true"} elementTag={"p"} elementClass={"md:ml-2"} elementContent={"University of Tennessee, Knoxville | Graduated May 2025 | GPA: 3.22"}/>
                 </div>
 
                 <div className=" lg:col-start-1 lg:col-span-full xl:col-start-2">
                     <TaggedElement elementTag={"h3"} elementContent={"Work Experience"} />
                     {/* Linnium */}
                     <TaggedElement elementHidden={"true"} elementTag={"h4"} elementContent={"Linnium - Founder & Consultant | Aug 2024 - Present"}/>
-                    <TaggedElement elementHidden={"true"} elementTag={"p"} elementContent={`Founded Linnium, LLC, delivering full-stack development, UX/UI design, and digital 
+                    <TaggedElement elementHidden={"true"} elementTag={"p"} elementClass={"md:ml-2"} elementContent={`Founded Linnium, LLC, delivering full-stack development, UX/UI design, and digital 
                         consulting. Led end-to-end projects from discovery through 
                         development, collaborating with stakeholders to build scalable, 
                         user-focused solutions.`}/>
 
                     {/* IBC */}
                     <TaggedElement elementHidden={"true"} elementTag={"h4"} elementClass={"mt-2"} elementContent={"IBC – Web Developer | May 2024 - Aug 2024"} />
-                    <TaggedElement elementHidden={"true"} elementTag={"p"} elementContent={`Worked as a web developer supporting website redesigns, feature updates,
+                    <TaggedElement elementHidden={"true"} elementTag={"p"} elementClass={"md:ml-2"} elementContent={`Worked as a web developer supporting website redesigns, feature updates,
                         and performance improvements. Focused on improving usability, visual
                         consistency, and responsiveness while collaborating with internal teams to
                         modernize existing digital assets.`} />
