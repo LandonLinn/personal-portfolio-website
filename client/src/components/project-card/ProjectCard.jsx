@@ -32,7 +32,7 @@ const ProjectCard = ({ coverImg, imgs, tags, name, date, description, links, slu
                                     } 
                                     w-fit 
                                     px-4 
-                                    py-0 
+                                    py-0
                                     rounded-full
                                     text-nowrap
                                 `}

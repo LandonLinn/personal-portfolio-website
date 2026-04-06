@@ -6,13 +6,22 @@ import { useState, useEffect } from "react";
 const Projects = () => {
     // Projects from Mongo
         const [projects, setProjects] = useState([]);
+        const [loading, setLoading] = useState(true);
     
         useEffect(() => {
             fetch(`${import.meta.env.VITE_API_URL}/api/projects`)
                 .then(res => res.json())
-                .then(data => setProjects(data))
-                .catch(err => console.error("Failed to fetch projects:", err));
+                .then(data => {
+                    setProjects(data);
+                    setLoading(false);
+                })
+                .catch(err => {
+                    console.error("Failed to fetch projects:", err);
+                    setLoading(false);
+                });
         }, [])
+
+    const featuredProjects = projects.filter(p => p.featured === true);
 
     return(
         <Section sectionClass="col-span-full text-center flex align-center scroll-mt-25">
@@ -21,8 +30,12 @@ const Projects = () => {
 
                 {/* Projects Shown (4 best) */}
                 <div className="mb-4 md:w-full h-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 grid-rows-auto gap-2">
-                    {projects.map((p) => 
-                       p.featured === true ? (
+                    {loading ? (
+                        <p className="col-span-full mx-auto h-80">Loading projects...</p>
+                    ) : featuredProjects.length === 0 ? (
+                        <p className="col-span-full mx-auto">No Featured Projects Yet.</p>
+                    ) : (
+                        featuredProjects.map(p => (
                             <ProjectCard
                                 key={p._id}
                                 slug={p.slug}
@@ -33,7 +46,7 @@ const Projects = () => {
                                 description={p.description}
                                 links={p.links}
                             />
-                        ) : null
+                        ))
                     )}
                 </div>
                 {/* View all button */}

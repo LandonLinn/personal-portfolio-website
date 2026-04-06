@@ -13,6 +13,9 @@ const ProjectPage = () => {
         setProjectFilter(name);
     }
 
+    // Loading State
+    const [loading, setLoading] = useState(true);
+
     // Projects from Mongo
     const [projects, setProjects] = useState([]);
     const filteredProjects = projects.filter(p =>
@@ -22,8 +25,14 @@ const ProjectPage = () => {
     useEffect(() => {
         fetch(`${import.meta.env.VITE_API_URL}/api/projects`)
             .then(res => res.json())
-            .then(data => setProjects(data))
-            .catch(err => console.error("Failed to fetch projects:", err));
+            .then(data => {
+                setProjects(data);
+                setLoading(false);
+            })
+            .catch(err => {
+                console.error("Failed to fetch projects:", err);
+                setLoading(false);
+            });
     }, [])
 
     return(
@@ -59,19 +68,21 @@ const ProjectPage = () => {
                 <div className="col-span-full">
                     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 grid-rows-auto gap-2 row-span-auto">
 
-                        {filteredProjects.length === 0 ? (
-                            <p className="col-span-full mx-auto h-50">No Projects Yet.</p>
+                        {loading ? (
+                            <p className="col-span-full mx-auto h-80">Loading projects...</p>
+                        ) : filteredProjects.length === 0 ? (
+                            <p className="col-span-full mx-auto h-80">No Projects Yet.</p>
                         ) : (
                             filteredProjects.map(p => (
                                 <ProjectCard
-                                key={p._id}
-                                slug={p.slug}
-                                coverImg={p.coverImg}
-                                date={p.date}
-                                name={p.name}
-                                tags={p.tags}
-                                description={p.description}
-                                links={p.links}
+                                    key={p._id}
+                                    slug={p.slug}
+                                    coverImg={p.coverImg}
+                                    date={p.date}
+                                    name={p.name}
+                                    tags={p.tags}
+                                    description={p.description}
+                                    links={p.links}
                                 />
                             ))
                         )}
